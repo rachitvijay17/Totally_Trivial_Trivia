@@ -1,0 +1,70 @@
+html{
+    background-image: url(../images/Trivia.gif) ; 
+    /* -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover; */
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    color: aliceblue;
+    font-family: 'Times New Roman', Times, serif;
+
+}
+
+.wrapper{
+    margin: 50px 100px 50px 100px;
+    padding: 50px 50px 50px 50px;
+    height: auto;
+    align-content: center;
+    text-align: center;
+    color: black;
+    background-color: khaki;
+}
+
+#head{
+    text-decoration: underline;
+    font-size: 50px;
+}
+
+#start{
+    padding: 20px 40px;
+    font-size: 40px;
+    font-family: 'Times New Roman', Times, serif;
+    cursor: pointer;
+    background-color: cornsilk;
+}
+
+#main{
+    height: auto;
+    display: none;
+}
+
+/* #QA, #result, #header{
+    display: none;
+} */
+
+#option1, #option2, #option3, #option4{
+    padding: 20px 20px;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    cursor: pointer;
+    background-color: cornsilk;
+    width: 300px;
+    font-weight: bold;
+}
+
+#option1:hover, #option2:hover, #option3:hover, #option4:hover{
+    border-color: crimson;
+    background-color: darkgrey;
+}
+
+#question, #msg{
+    font-weight: bold;
+    font-size: 30px;
+}
+
+#ans_img{
+    width: 500px;
+    height: 400px;
+}
