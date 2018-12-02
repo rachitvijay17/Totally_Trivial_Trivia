@@ -5,7 +5,7 @@ var intervalId;
 var audio = new Audio("assets/Audio/click.mp3");
 var audiotimer = new Audio("assets/Audio/timer.mp3");
 
-
+//Creating an array of abject for the Q&A
 var game = [
 
     question = {
@@ -68,6 +68,9 @@ var i = 0;//Math.floor(Math.random()*game.length);
 
 //html();
 
+//When you click on START Button, section's with timer and Q&A with get display
+//and other sections will be hidden
+
 $("#start").on("click", function(){
     document.getElementById("start").style.display = "none";
     document.getElementById("main").style.display = "block";
@@ -75,6 +78,9 @@ $("#start").on("click", function(){
     html();
     audio.play();
 })
+
+//Logic when user will click on the options provided. The code will call back the 
+//repective functions to process the answer
 
 $("#option1").on("click", function(){
     audio.play();
@@ -132,6 +138,9 @@ $("#option4").on("click", function(){
     }
 })
 
+//Created a function to loop through the array of objects and trigger the end of 
+//game process if all the questions are answered
+
 function increment(){
 
     if(i<game.length-1){
@@ -145,6 +154,8 @@ function increment(){
     }
 }
 
+//Function for creating the HTML for the questions and the timer
+
 function html(){
     run();
     document.getElementById("question").textContent = game[i].q;
@@ -156,6 +167,8 @@ function html(){
 
 }
 
+//Function for displaying the html if answer is correct
+
 function anssectionC(){
     document.getElementById("QA").style.display = "none";
     document.getElementById("result").style.display = "block";
@@ -163,6 +176,8 @@ function anssectionC(){
     document.getElementById("ans_img").setAttribute("src", game[i].img);
     clearInterval(intervalId);
 }
+
+//function for displaying the html if answer is wrong
 
 function anssectionW(){
     document.getElementById("QA").style.display = "none";
@@ -172,15 +187,19 @@ function anssectionW(){
     clearInterval(intervalId);
 }
 
+//function for displaying the html when the game is completed
+
 function completion(){
     document.getElementById("QA").style.display = "none";
     document.getElementById("result").style.display = "block";
     document.getElementById("msg").textContent = "You completed the Q&A"
     document.getElementById("ans_img").setAttribute("src", "./assets/images/Completion.gif");
-    debugger;
+    //debugger;
     document.getElementById("header").style.display = "none";
     clearInterval(intervalId);
 }
+
+//function for recreating Q&A Section
 
 function reset(){
     document.getElementById("QA").style.display = "block";
@@ -189,6 +208,7 @@ function reset(){
     html();
 }
 
+//Functions for the Timer
 
 function run() {
     intervalId = setInterval(time, 1000); 
